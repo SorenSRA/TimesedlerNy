@@ -4,7 +4,6 @@ from typing import List
 from os.path import join
 
 
-FILNAVN = r"C:\Filkassen\PythonMm\VSCode_projects\Timesedler\data\maanedsStatistik.xlsx"
 SHEETNAVN = "MaanedsStatistik"
 NAVNEKOL = "Navn"  # Den kolonne der indeholder medarb. 'Navn . (ini)'
 INIKOL = "Ini"  # Kolonne der oprettes til at indeholde medarbejder-ini
@@ -29,7 +28,7 @@ class Faelles:
 @dataclass
 class Kontrol(Faelles):
     projpath: str = r"Opfolgning\2023"
-    filnavn: str = r"20231023TID_Dimensionsanalyse.xlsx"
+    filnavn: str = r"20240115_TidsUdtraek_Endelig2023.xlsx"
     filpath: str = field(
         default_factory=lambda: join(
             Faelles.rootpath, Kontrol.projpath, Kontrol.filnavn
@@ -40,7 +39,7 @@ class Kontrol(Faelles):
 @dataclass
 class Bet(Faelles):
     projpath: str = r"LIFE-BetterBirdLife"
-    filnavn: str = r"Naturstyrelsen og Kystdirektoratet2023Q3.xlsm"
+    filnavn: str = r"Naturstyrelsen og Kystdirektoratet2023Q4.xlsm"
 
     filpath: str = field(
         default_factory=lambda: join(
@@ -58,7 +57,7 @@ class Bet(Faelles):
 @dataclass
 class Coast(Faelles):
     projpath: str = r"LIFE-CoastalLife"
-    filnavn: str = r"NST-LIFECoastalLifeFinancialReporting2023Q2.xlsx"
+    filnavn: str = r"NST-LIFECoastalLifeFinancialReporting2023Q4.xlsx"
     filpath: str = field(
         default_factory=lambda: join(
             Faelles.rootpath, Coast.projpath, Faelles.frpath, Coast.filnavn
@@ -92,7 +91,7 @@ class Hoj(Faelles):
 @dataclass
 class Wadsea(Faelles):
     projpath: str = r"LIFE-WattenSeaBird"
-    filnavn: str = r"NST-LIFEWadSeaFinancialReporting2023Q3.xlsx"
+    filnavn: str = r"NST-LIFEWadSeaFinancialReporting2023Q4.xlsx"
     filpath: str = field(
         default_factory=lambda: join(
             Faelles.rootpath, Wadsea.projpath, Faelles.frpath, Wadsea.filnavn
@@ -102,5 +101,22 @@ class Wadsea(Faelles):
     destinationpath: str = field(
         default_factory=lambda: join(
             Faelles.rootpath, Wadsea.projpath, Faelles.timeseddelpath
+        )
+    )
+
+
+@dataclass
+class Orchids(Faelles):
+    projpath: str = r"LIFE-Orchid"
+    filnavn: str = r"NST-LIFEOrchidFinancialReporting2023Q4.xlsx"
+    filpath: str = field(
+        default_factory=lambda: join(
+            Faelles.rootpath, Orchids.projpath, Faelles.frpath, Orchids.filnavn
+        )
+    )
+
+    destinationpath: str = field(
+        default_factory=lambda: join(
+            Faelles.rootpath, Orchids.projpath, Faelles.timeseddelpath
         )
     )

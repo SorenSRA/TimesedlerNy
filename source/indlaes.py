@@ -112,6 +112,8 @@ def kor(proj="test"):
             project = c.Hoj()
         case "wad":
             project = c.Wadsea()
+        case "orchid":
+            project = c.Orchids()
         case _:
             print(
                 "Ugyldig projektnavn - Kontrol/Bet/Coast/4Fit/Hoj/Natman/Open/Orchid/Wad"
